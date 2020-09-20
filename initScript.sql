@@ -9,8 +9,8 @@ BEGIN
 
 	CREATE TABLE IF NOT EXISTS users
 	(id INT NOT NULL AUTO_INCREMENT,
-	userName VARCHAR(32) NOT NULL,
-	firstName VARCHAR(32),
+	username VARCHAR(32) NOT NULL,
+	firstname VARCHAR(32),
 	lastname VARCHAR(32),
 	email VARCHAR(32),
 	PRIMARY KEY (id)
@@ -18,9 +18,9 @@ BEGIN
 
 	CREATE TABLE IF NOT EXISTS companies
 	(id INT NOT NULL AUTO_INCREMENT,
-	companyName VARCHAR(32) NOT NULL,
+	companyname VARCHAR(32) NOT NULL,
 	street VARCHAR(32),
-	phoneName VARCHAR(10),
+	phonenumber VARCHAR(10),
 	PRIMARY KEY (id)
 	);
 
@@ -29,11 +29,11 @@ BEGIN
     SET ExistCountCompanies = (SELECT COUNT(1) FROM companies);
 
 	IF ExistCountUsers = 0 THEN
-		INSERT INTO users (userName,firstName,lastname,email) VALUES ('UserName','FirstName','LastName','username@gmail.com');	
+		INSERT INTO users (username,firstname,lastname,email) VALUES ('UserName','FirstName','LastName','username@gmail.com');	
 	END IF;
 
     IF ExistCountCompanies = 0 THEN	
-		INSERT INTO companies (companyName, street,phoneName) VALUES ('TestAutomationCompany','Street','3105436789');	
+		INSERT INTO companies (companyname, street,phonenumber) VALUES ('TestAutomationCompany','Street','3105436789');	
 	END IF;
 
 	END //

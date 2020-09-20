@@ -10,12 +10,20 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - /tmp/data:/var/lib/mysql  
+      - /tmp/mysql_data:/var/lib/mysql  
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: root
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
+
+  springapi:
+    image: wolffjose/spring-boot-api:latest
+    ports:
+      - 5000:5000 
+    depends_on:
+      - db
+

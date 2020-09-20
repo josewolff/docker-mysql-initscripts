@@ -22,6 +22,7 @@ services:
 
   springapi:
     image: wolffjose/spring-boot-api:latest
+    restart: always
     ports:
       - 5000:5000 
     depends_on:
